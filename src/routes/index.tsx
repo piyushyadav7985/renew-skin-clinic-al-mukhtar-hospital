@@ -198,27 +198,41 @@ function Hero() {
             <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent" />
           </motion.div>
 
-          {/* Floating glass cards */}
+          {/* Floating glass cards — Vision-Pro style, refined */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.8 }}
-            className="absolute -left-4 sm:-left-8 top-12 glass rounded-2xl p-4 w-44 float-slow"
+            initial={{ opacity: 0, x: -20, y: -10 }} animate={{ opacity: 1, x: 0, y: 0 }} transition={{ delay: 0.8, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+            className="absolute -left-3 sm:-left-6 top-4 sm:top-6 rounded-2xl p-3 w-36 sm:w-[150px] float-slow"
+            style={{
+              background: "rgba(255,255,255,0.42)",
+              backdropFilter: "saturate(180%) blur(28px)",
+              WebkitBackdropFilter: "saturate(180%) blur(28px)",
+              border: "1px solid rgba(255,255,255,0.55)",
+              boxShadow: "0 1px 0 rgba(255,255,255,0.6) inset, 0 20px 50px -20px rgba(124,58,237,0.22), 0 6px 20px -10px rgba(232,180,184,0.25)",
+            }}
           >
-            <div className="text-[10px] uppercase tracking-widest text-muted-foreground">Today</div>
-            <div className="mt-1 font-display text-2xl font-bold">98%</div>
-            <div className="text-xs text-muted-foreground">Patient satisfaction</div>
+            <div className="text-[9px] uppercase tracking-[0.2em] text-muted-foreground">Today</div>
+            <div className="mt-0.5 font-display text-xl font-bold leading-none">98%</div>
+            <div className="text-[10px] text-muted-foreground mt-1 leading-tight">Patient satisfaction</div>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 1 }}
-            className="absolute -right-2 sm:-right-6 bottom-12 glass rounded-2xl p-4 w-52 float-slow" style={{ animationDelay: "2s" }}
+            initial={{ opacity: 0, x: 20, y: 10 }} animate={{ opacity: 1, x: 0, y: 0 }} transition={{ delay: 1, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+            className="absolute -right-2 sm:-right-5 bottom-8 rounded-2xl p-3.5 w-[180px] sm:w-[190px] float-slow"
+            style={{
+              animationDelay: "2s",
+              background: "rgba(255,255,255,0.42)",
+              backdropFilter: "saturate(180%) blur(28px)",
+              WebkitBackdropFilter: "saturate(180%) blur(28px)",
+              border: "1px solid rgba(255,255,255,0.55)",
+              boxShadow: "0 1px 0 rgba(255,255,255,0.6) inset, 0 20px 50px -20px rgba(124,58,237,0.22), 0 6px 20px -10px rgba(232,180,184,0.25)",
+            }}
           >
-            <div className="flex items-center gap-2">
-              <div className="h-8 w-8 rounded-full bg-gradient-to-br from-primary to-rose" />
-              <div>
-                <div className="text-xs font-medium">Hydra Facial</div>
-                <div className="text-[10px] text-muted-foreground">Booked 3 mins ago</div>
-              </div>
+            <div className="text-[9px] uppercase tracking-[0.22em] text-primary font-medium">Signature</div>
+            <div className="mt-1 font-display text-sm font-bold leading-tight">Hydra Facial</div>
+            <div className="mt-2 flex items-center gap-1">
+              {[...Array(5)].map((_,i)=><Star key={i} className="h-2.5 w-2.5 fill-rose text-rose" />)}
+              <span className="ml-1 text-[10px] font-medium">4.9</span>
             </div>
-            <div className="mt-3 flex items-center gap-1 text-[10px]"><Check className="h-3 w-3 text-primary" /> Verified result</div>
+            <div className="mt-1.5 text-[10px] text-muted-foreground leading-tight">Clinically guided treatment</div>
           </motion.div>
         </div>
       </div>
