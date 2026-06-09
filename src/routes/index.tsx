@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform, useInView, useMotionValue, useSpring }
 import { useEffect, useRef, useState } from "react";
 import {
   Sparkles, Phone, MapPin, Instagram, Star, ArrowRight, ArrowUpRight,
-  Plus, Minus, Check, Menu, X, MessageCircle, Calendar,
+  Plus, Minus, Check, Menu, X, MessageCircle,
 } from "lucide-react";
 
 import hero from "@/assets/hero.jpg";
